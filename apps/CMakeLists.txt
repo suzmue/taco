@@ -1,1 +1,3 @@
 add_subdirectory(tensor_times_vector)
+add_subdirectory(tensor_transpose)
+add_subdirectory(mat-transpose)
