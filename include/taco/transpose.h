@@ -55,6 +55,20 @@ int transpose_countsort_all(taco_tensor_t *A, taco_tensor_t *B);
 
 
 // -----------------------------------------------------------------------------------------------
+// radix sort Implementations:
+
+int transpose_radixsort_skip_merge(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_radixsort_skip(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_radixsort_all(taco_tensor_t *A, taco_tensor_t *B);
+
+int transpose_radixsort_pow2_all(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_radixsort_pow2_skip(taco_tensor_t *A, taco_tensor_t *B);
+
+int transpose_radixsort_bycoord_all(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_radixsort_bycoord_pow2_all(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_radixsort_bycoord_pow2_skip(taco_tensor_t *A, taco_tensor_t *B);
+
+// -----------------------------------------------------------------------------------------------
 // Halfperm style implementations:
 
 // tranpose_bylevel transposes a 3-tensor (A(k,j,i) = B(i,j,k)) by:
