@@ -27,13 +27,6 @@ int compare_crd_vals(const void *p, const void *q)
     return (r < s) ? -1 : 1;
 }
 
-
-// struct coo_t
-// {
-//     int32_t idx[3];
-//     double val;
-// };
-
 int compare_coords(const void *p, const void *q)
 {
     // Get the values at given addresses
@@ -103,26 +96,14 @@ int transpose_qsort(taco_tensor_t *A, taco_tensor_t *B)
     }
     A0_mask = ~A0_mask;
 
-    //std::cout << (int)B0_size << " " << (int)B1_size << " " << (int)B2_size << std::endl;
-
-    //std::cout << (int)B0_dim_size << " " << (int)B1_dim_size << " " << (int)B2_dim_size << std::endl;
-
     if (B0_dim_size + B1_dim_size + B2_dim_size > 64)
     {
         std::cout << "FAIL" << std::endl;
         return -1;
     }
 
-    // std::bitset<64> x0(A0_mask);
-    //std::cout << x0 << '\n';
-    //std::bitset<64> x1(A1_mask);
-    //std::cout << x1 << '\n';
-    //std::bitset<64> x2(A1_mask);
-    // std::cout << x2 << '\n';
-
     uint8_t sh1 = B0_dim_size;
     uint8_t sh2 = sh1 + B1_dim_size;
-    // std::cout << (int)sh1 << " " << (int)sh2 << std::endl;
 
     int *A0_pos_arr = (int *)(A->indices[0][0]);
     int *A0_idx_arr = (int *)(A->indices[0][1]);
