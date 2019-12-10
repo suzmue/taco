@@ -94,5 +94,9 @@ int transpose(taco_tensor_t *A, taco_tensor_t *B)
     return transpose_qsort(A, B);
 }
 
+
+int transpose_123(taco_tensor_t *A, taco_tensor_t *B);
+int transpose_132(taco_tensor_t *A, taco_tensor_t *B);
+
 } // namespace taco
 #endif
