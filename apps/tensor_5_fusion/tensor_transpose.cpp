@@ -8796,7 +8796,7 @@ int transpose_coo_01243_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4012[bucket_4012[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4012[perm[i]]] = C_coords_scratch[i];
 		quotient_4012[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -8889,7 +8889,7 @@ int transpose_coo_01243_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4012[bucket_4012[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4012[perm[i]]] = C_coords_scratch[i];
 		quotient_4012[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -9020,7 +9020,7 @@ int transpose_coo_01324_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[perm[i]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9106,7 +9106,7 @@ int transpose_coo_01324_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9195,7 +9195,7 @@ int transpose_coo_01324_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -9326,7 +9326,7 @@ int transpose_coo_01342_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9412,7 +9412,7 @@ int transpose_coo_01342_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Fix and sort on [0, 1]
@@ -9460,7 +9460,7 @@ int transpose_coo_01342_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9552,7 +9552,7 @@ int transpose_coo_01342_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Fix and sort on [0, 1]
@@ -9600,7 +9600,7 @@ int transpose_coo_01342_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -9734,7 +9734,7 @@ int transpose_coo_01423_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9820,7 +9820,7 @@ int transpose_coo_01423_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -9909,7 +9909,7 @@ int transpose_coo_01423_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -10040,7 +10040,7 @@ int transpose_coo_01432_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10126,7 +10126,7 @@ int transpose_coo_01432_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Fix and sort on [0, 1]
@@ -10174,7 +10174,7 @@ int transpose_coo_01432_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10266,7 +10266,7 @@ int transpose_coo_01432_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_301[bucket_301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_301[perm[i]]] = C_coords_scratch[i];
 		quotient_301[perm[i]] ++;
 	}
 	// Fix and sort on [0, 1]
@@ -10314,7 +10314,7 @@ int transpose_coo_01432_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_401[bucket_401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_401[perm[i]]] = C_coords_scratch[i];
 		quotient_401[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -10417,7 +10417,7 @@ int transpose_coo_02134_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10496,7 +10496,7 @@ int transpose_coo_02134_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10578,7 +10578,7 @@ int transpose_coo_02134_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10663,7 +10663,7 @@ int transpose_coo_02134_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -10763,7 +10763,7 @@ int transpose_coo_02143_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10842,7 +10842,7 @@ int transpose_coo_02143_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -10924,7 +10924,7 @@ int transpose_coo_02143_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0, 2, 1]
@@ -10976,7 +10976,7 @@ int transpose_coo_02143_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4021[bucket_4021[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4021[perm[i]]] = C_coords_scratch[i];
 		quotient_4021[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11064,7 +11064,7 @@ int transpose_coo_02143_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0, 2, 1]
@@ -11116,7 +11116,7 @@ int transpose_coo_02143_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4021[bucket_4021[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4021[perm[i]]] = C_coords_scratch[i];
 		quotient_4021[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -11219,7 +11219,7 @@ int transpose_coo_02314_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11298,7 +11298,7 @@ int transpose_coo_02314_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -11342,7 +11342,7 @@ int transpose_coo_02314_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11427,7 +11427,7 @@ int transpose_coo_02314_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -11471,7 +11471,7 @@ int transpose_coo_02314_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11559,7 +11559,7 @@ int transpose_coo_02314_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -11603,7 +11603,7 @@ int transpose_coo_02314_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -11706,7 +11706,7 @@ int transpose_coo_02341_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11785,7 +11785,7 @@ int transpose_coo_02341_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -11829,7 +11829,7 @@ int transpose_coo_02341_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -11914,7 +11914,7 @@ int transpose_coo_02341_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -11958,7 +11958,7 @@ int transpose_coo_02341_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12002,7 +12002,7 @@ int transpose_coo_02341_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12093,7 +12093,7 @@ int transpose_coo_02341_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12137,7 +12137,7 @@ int transpose_coo_02341_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12181,7 +12181,7 @@ int transpose_coo_02341_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -12287,7 +12287,7 @@ int transpose_coo_02413_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12366,7 +12366,7 @@ int transpose_coo_02413_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12410,7 +12410,7 @@ int transpose_coo_02413_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12495,7 +12495,7 @@ int transpose_coo_02413_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12539,7 +12539,7 @@ int transpose_coo_02413_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12627,7 +12627,7 @@ int transpose_coo_02413_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12671,7 +12671,7 @@ int transpose_coo_02413_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -12774,7 +12774,7 @@ int transpose_coo_02431_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12853,7 +12853,7 @@ int transpose_coo_02431_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -12897,7 +12897,7 @@ int transpose_coo_02431_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -12982,7 +12982,7 @@ int transpose_coo_02431_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -13026,7 +13026,7 @@ int transpose_coo_02431_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -13070,7 +13070,7 @@ int transpose_coo_02431_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13161,7 +13161,7 @@ int transpose_coo_02431_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -13205,7 +13205,7 @@ int transpose_coo_02431_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -13249,7 +13249,7 @@ int transpose_coo_02431_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -13355,7 +13355,7 @@ int transpose_coo_03124_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13434,7 +13434,7 @@ int transpose_coo_03124_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13516,7 +13516,7 @@ int transpose_coo_03124_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13601,7 +13601,7 @@ int transpose_coo_03124_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -13701,7 +13701,7 @@ int transpose_coo_03142_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13780,7 +13780,7 @@ int transpose_coo_03142_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -13862,7 +13862,7 @@ int transpose_coo_03142_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0, 3, 1]
@@ -13914,7 +13914,7 @@ int transpose_coo_03142_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4031[bucket_4031[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4031[perm[i]]] = C_coords_scratch[i];
 		quotient_4031[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14002,7 +14002,7 @@ int transpose_coo_03142_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0, 3, 1]
@@ -14054,7 +14054,7 @@ int transpose_coo_03142_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4031[bucket_4031[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4031[perm[i]]] = C_coords_scratch[i];
 		quotient_4031[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -14157,7 +14157,7 @@ int transpose_coo_03214_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14236,7 +14236,7 @@ int transpose_coo_03214_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14280,7 +14280,7 @@ int transpose_coo_03214_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14365,7 +14365,7 @@ int transpose_coo_03214_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14409,7 +14409,7 @@ int transpose_coo_03214_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14497,7 +14497,7 @@ int transpose_coo_03214_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14541,7 +14541,7 @@ int transpose_coo_03214_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -14644,7 +14644,7 @@ int transpose_coo_03241_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14723,7 +14723,7 @@ int transpose_coo_03241_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14767,7 +14767,7 @@ int transpose_coo_03241_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -14852,7 +14852,7 @@ int transpose_coo_03241_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14896,7 +14896,7 @@ int transpose_coo_03241_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -14940,7 +14940,7 @@ int transpose_coo_03241_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15031,7 +15031,7 @@ int transpose_coo_03241_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15075,7 +15075,7 @@ int transpose_coo_03241_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15119,7 +15119,7 @@ int transpose_coo_03241_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -15225,7 +15225,7 @@ int transpose_coo_03412_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15304,7 +15304,7 @@ int transpose_coo_03412_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15348,7 +15348,7 @@ int transpose_coo_03412_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15433,7 +15433,7 @@ int transpose_coo_03412_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15477,7 +15477,7 @@ int transpose_coo_03412_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15565,7 +15565,7 @@ int transpose_coo_03412_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15609,7 +15609,7 @@ int transpose_coo_03412_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -15712,7 +15712,7 @@ int transpose_coo_03421_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15791,7 +15791,7 @@ int transpose_coo_03421_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15835,7 +15835,7 @@ int transpose_coo_03421_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -15920,7 +15920,7 @@ int transpose_coo_03421_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -15964,7 +15964,7 @@ int transpose_coo_03421_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -16008,7 +16008,7 @@ int transpose_coo_03421_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16099,7 +16099,7 @@ int transpose_coo_03421_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -16143,7 +16143,7 @@ int transpose_coo_03421_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -16187,7 +16187,7 @@ int transpose_coo_03421_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -16293,7 +16293,7 @@ int transpose_coo_04123_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16372,7 +16372,7 @@ int transpose_coo_04123_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16454,7 +16454,7 @@ int transpose_coo_04123_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16539,7 +16539,7 @@ int transpose_coo_04123_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -16639,7 +16639,7 @@ int transpose_coo_04132_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16718,7 +16718,7 @@ int transpose_coo_04132_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16800,7 +16800,7 @@ int transpose_coo_04132_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0, 4, 1]
@@ -16852,7 +16852,7 @@ int transpose_coo_04132_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3041[bucket_3041[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3041[perm[i]]] = C_coords_scratch[i];
 		quotient_3041[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -16940,7 +16940,7 @@ int transpose_coo_04132_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Fix and sort on [0, 4, 1]
@@ -16992,7 +16992,7 @@ int transpose_coo_04132_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3041[bucket_3041[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3041[perm[i]]] = C_coords_scratch[i];
 		quotient_3041[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -17095,7 +17095,7 @@ int transpose_coo_04213_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17174,7 +17174,7 @@ int transpose_coo_04213_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17218,7 +17218,7 @@ int transpose_coo_04213_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17303,7 +17303,7 @@ int transpose_coo_04213_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17347,7 +17347,7 @@ int transpose_coo_04213_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17435,7 +17435,7 @@ int transpose_coo_04213_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17479,7 +17479,7 @@ int transpose_coo_04213_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -17582,7 +17582,7 @@ int transpose_coo_04231_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17661,7 +17661,7 @@ int transpose_coo_04231_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17705,7 +17705,7 @@ int transpose_coo_04231_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17790,7 +17790,7 @@ int transpose_coo_04231_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17834,7 +17834,7 @@ int transpose_coo_04231_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -17878,7 +17878,7 @@ int transpose_coo_04231_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -17969,7 +17969,7 @@ int transpose_coo_04231_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18013,7 +18013,7 @@ int transpose_coo_04231_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18057,7 +18057,7 @@ int transpose_coo_04231_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -18163,7 +18163,7 @@ int transpose_coo_04312_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -18242,7 +18242,7 @@ int transpose_coo_04312_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18286,7 +18286,7 @@ int transpose_coo_04312_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -18371,7 +18371,7 @@ int transpose_coo_04312_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18415,7 +18415,7 @@ int transpose_coo_04312_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -18503,7 +18503,7 @@ int transpose_coo_04312_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18547,7 +18547,7 @@ int transpose_coo_04312_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -18650,7 +18650,7 @@ int transpose_coo_04321_k2(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -18729,7 +18729,7 @@ int transpose_coo_04321_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18773,7 +18773,7 @@ int transpose_coo_04321_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -18858,7 +18858,7 @@ int transpose_coo_04321_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18902,7 +18902,7 @@ int transpose_coo_04321_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -18946,7 +18946,7 @@ int transpose_coo_04321_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -19037,7 +19037,7 @@ int transpose_coo_04321_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -19081,7 +19081,7 @@ int transpose_coo_04321_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_30[bucket_30[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_30[perm[i]]] = C_coords_scratch[i];
 		quotient_30[perm[i]] ++;
 	}
 	// Fix and sort on [0]
@@ -19125,7 +19125,7 @@ int transpose_coo_04321_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_40[bucket_40[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_40[perm[i]]] = C_coords_scratch[i];
 		quotient_40[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -19707,7 +19707,7 @@ int transpose_coo_10243_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4102[bucket_4102[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4102[perm[i]]] = C_coords_scratch[i];
 		quotient_4102[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -19826,7 +19826,7 @@ int transpose_coo_10243_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4102[bucket_4102[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4102[perm[i]]] = C_coords_scratch[i];
 		quotient_4102[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -20045,7 +20045,7 @@ int transpose_coo_10324_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -20157,7 +20157,7 @@ int transpose_coo_10324_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -20272,7 +20272,7 @@ int transpose_coo_10324_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -20491,7 +20491,7 @@ int transpose_coo_10342_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -20603,7 +20603,7 @@ int transpose_coo_10342_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Fix and sort on [1, 0]
@@ -20651,7 +20651,7 @@ int transpose_coo_10342_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -20769,7 +20769,7 @@ int transpose_coo_10342_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Fix and sort on [1, 0]
@@ -20817,7 +20817,7 @@ int transpose_coo_10342_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -21039,7 +21039,7 @@ int transpose_coo_10423_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -21151,7 +21151,7 @@ int transpose_coo_10423_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -21266,7 +21266,7 @@ int transpose_coo_10423_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -21485,7 +21485,7 @@ int transpose_coo_10432_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -21597,7 +21597,7 @@ int transpose_coo_10432_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Fix and sort on [1, 0]
@@ -21645,7 +21645,7 @@ int transpose_coo_10432_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -21763,7 +21763,7 @@ int transpose_coo_10432_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_310[bucket_310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_310[perm[i]]] = C_coords_scratch[i];
 		quotient_310[perm[i]] ++;
 	}
 	// Fix and sort on [1, 0]
@@ -21811,7 +21811,7 @@ int transpose_coo_10432_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_410[bucket_410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_410[perm[i]]] = C_coords_scratch[i];
 		quotient_410[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -22572,7 +22572,7 @@ int transpose_coo_12043_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4120[bucket_4120[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4120[perm[i]]] = C_coords_scratch[i];
 		quotient_4120[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -22717,7 +22717,7 @@ int transpose_coo_12043_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4120[bucket_4120[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4120[perm[i]]] = C_coords_scratch[i];
 		quotient_4120[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -25480,7 +25480,7 @@ int transpose_coo_13042_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4130[bucket_4130[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4130[perm[i]]] = C_coords_scratch[i];
 		quotient_4130[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -25625,7 +25625,7 @@ int transpose_coo_13042_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4130[bucket_4130[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4130[perm[i]]] = C_coords_scratch[i];
 		quotient_4130[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -28388,7 +28388,7 @@ int transpose_coo_14032_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3140[bucket_3140[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3140[perm[i]]] = C_coords_scratch[i];
 		quotient_3140[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -28533,7 +28533,7 @@ int transpose_coo_14032_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3140[bucket_3140[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3140[perm[i]]] = C_coords_scratch[i];
 		quotient_3140[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -31115,7 +31115,7 @@ int transpose_coo_20143_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4201[bucket_4201[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4201[perm[i]]] = C_coords_scratch[i];
 		quotient_4201[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -31234,7 +31234,7 @@ int transpose_coo_20143_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4201[bucket_4201[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4201[perm[i]]] = C_coords_scratch[i];
 		quotient_4201[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -31453,7 +31453,7 @@ int transpose_coo_20314_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -31565,7 +31565,7 @@ int transpose_coo_20314_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -31680,7 +31680,7 @@ int transpose_coo_20314_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -31899,7 +31899,7 @@ int transpose_coo_20341_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -32011,7 +32011,7 @@ int transpose_coo_20341_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Fix and sort on [2, 0]
@@ -32059,7 +32059,7 @@ int transpose_coo_20341_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -32177,7 +32177,7 @@ int transpose_coo_20341_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Fix and sort on [2, 0]
@@ -32225,7 +32225,7 @@ int transpose_coo_20341_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -32447,7 +32447,7 @@ int transpose_coo_20413_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -32559,7 +32559,7 @@ int transpose_coo_20413_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -32674,7 +32674,7 @@ int transpose_coo_20413_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -32893,7 +32893,7 @@ int transpose_coo_20431_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -33005,7 +33005,7 @@ int transpose_coo_20431_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Fix and sort on [2, 0]
@@ -33053,7 +33053,7 @@ int transpose_coo_20431_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -33171,7 +33171,7 @@ int transpose_coo_20431_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_320[bucket_320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_320[perm[i]]] = C_coords_scratch[i];
 		quotient_320[perm[i]] ++;
 	}
 	// Fix and sort on [2, 0]
@@ -33219,7 +33219,7 @@ int transpose_coo_20431_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_420[bucket_420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_420[perm[i]]] = C_coords_scratch[i];
 		quotient_420[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -33980,7 +33980,7 @@ int transpose_coo_21043_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4210[bucket_4210[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4210[perm[i]]] = C_coords_scratch[i];
 		quotient_4210[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -34125,7 +34125,7 @@ int transpose_coo_21043_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4210[bucket_4210[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4210[perm[i]]] = C_coords_scratch[i];
 		quotient_4210[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -36888,7 +36888,7 @@ int transpose_coo_23041_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4230[bucket_4230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4230[perm[i]]] = C_coords_scratch[i];
 		quotient_4230[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -37033,7 +37033,7 @@ int transpose_coo_23041_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4230[bucket_4230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4230[perm[i]]] = C_coords_scratch[i];
 		quotient_4230[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -39796,7 +39796,7 @@ int transpose_coo_24031_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3240[bucket_3240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3240[perm[i]]] = C_coords_scratch[i];
 		quotient_3240[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -39941,7 +39941,7 @@ int transpose_coo_24031_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3240[bucket_3240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3240[perm[i]]] = C_coords_scratch[i];
 		quotient_3240[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -42523,7 +42523,7 @@ int transpose_coo_30142_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4301[bucket_4301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4301[perm[i]]] = C_coords_scratch[i];
 		quotient_4301[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -42642,7 +42642,7 @@ int transpose_coo_30142_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4301[bucket_4301[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4301[perm[i]]] = C_coords_scratch[i];
 		quotient_4301[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -42861,7 +42861,7 @@ int transpose_coo_30214_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -42973,7 +42973,7 @@ int transpose_coo_30214_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -43088,7 +43088,7 @@ int transpose_coo_30214_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -43307,7 +43307,7 @@ int transpose_coo_30241_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -43419,7 +43419,7 @@ int transpose_coo_30241_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Fix and sort on [3, 0]
@@ -43467,7 +43467,7 @@ int transpose_coo_30241_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -43585,7 +43585,7 @@ int transpose_coo_30241_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Fix and sort on [3, 0]
@@ -43633,7 +43633,7 @@ int transpose_coo_30241_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -43855,7 +43855,7 @@ int transpose_coo_30412_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -43967,7 +43967,7 @@ int transpose_coo_30412_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -44082,7 +44082,7 @@ int transpose_coo_30412_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -44301,7 +44301,7 @@ int transpose_coo_30421_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -44413,7 +44413,7 @@ int transpose_coo_30421_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Fix and sort on [3, 0]
@@ -44461,7 +44461,7 @@ int transpose_coo_30421_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -44579,7 +44579,7 @@ int transpose_coo_30421_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_230[bucket_230[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_230[perm[i]]] = C_coords_scratch[i];
 		quotient_230[perm[i]] ++;
 	}
 	// Fix and sort on [3, 0]
@@ -44627,7 +44627,7 @@ int transpose_coo_30421_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_430[bucket_430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_430[perm[i]]] = C_coords_scratch[i];
 		quotient_430[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -45388,7 +45388,7 @@ int transpose_coo_31042_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4310[bucket_4310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4310[perm[i]]] = C_coords_scratch[i];
 		quotient_4310[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -45533,7 +45533,7 @@ int transpose_coo_31042_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4310[bucket_4310[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4310[perm[i]]] = C_coords_scratch[i];
 		quotient_4310[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -48296,7 +48296,7 @@ int transpose_coo_32041_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4320[bucket_4320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4320[perm[i]]] = C_coords_scratch[i];
 		quotient_4320[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -48441,7 +48441,7 @@ int transpose_coo_32041_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_4320[bucket_4320[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_4320[perm[i]]] = C_coords_scratch[i];
 		quotient_4320[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -51204,7 +51204,7 @@ int transpose_coo_34021_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_2340[bucket_2340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_2340[perm[i]]] = C_coords_scratch[i];
 		quotient_2340[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -51349,7 +51349,7 @@ int transpose_coo_34021_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_2340[bucket_2340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_2340[perm[i]]] = C_coords_scratch[i];
 		quotient_2340[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -53931,7 +53931,7 @@ int transpose_coo_40132_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3401[bucket_3401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3401[perm[i]]] = C_coords_scratch[i];
 		quotient_3401[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -54050,7 +54050,7 @@ int transpose_coo_40132_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3401[bucket_3401[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3401[perm[i]]] = C_coords_scratch[i];
 		quotient_3401[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -54269,7 +54269,7 @@ int transpose_coo_40213_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -54381,7 +54381,7 @@ int transpose_coo_40213_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -54496,7 +54496,7 @@ int transpose_coo_40213_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -54715,7 +54715,7 @@ int transpose_coo_40231_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -54827,7 +54827,7 @@ int transpose_coo_40231_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Fix and sort on [4, 0]
@@ -54875,7 +54875,7 @@ int transpose_coo_40231_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -54993,7 +54993,7 @@ int transpose_coo_40231_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Fix and sort on [4, 0]
@@ -55041,7 +55041,7 @@ int transpose_coo_40231_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -55263,7 +55263,7 @@ int transpose_coo_40312_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -55375,7 +55375,7 @@ int transpose_coo_40312_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -55490,7 +55490,7 @@ int transpose_coo_40312_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -55709,7 +55709,7 @@ int transpose_coo_40321_k3(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -55821,7 +55821,7 @@ int transpose_coo_40321_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Fix and sort on [4, 0]
@@ -55869,7 +55869,7 @@ int transpose_coo_40321_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -55987,7 +55987,7 @@ int transpose_coo_40321_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_240[bucket_240[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_240[perm[i]]] = C_coords_scratch[i];
 		quotient_240[perm[i]] ++;
 	}
 	// Fix and sort on [4, 0]
@@ -56035,7 +56035,7 @@ int transpose_coo_40321_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_340[bucket_340[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_340[perm[i]]] = C_coords_scratch[i];
 		quotient_340[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -56796,7 +56796,7 @@ int transpose_coo_41032_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3410[bucket_3410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3410[perm[i]]] = C_coords_scratch[i];
 		quotient_3410[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -56941,7 +56941,7 @@ int transpose_coo_41032_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3410[bucket_3410[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3410[perm[i]]] = C_coords_scratch[i];
 		quotient_3410[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -59704,7 +59704,7 @@ int transpose_coo_42031_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3420[bucket_3420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3420[perm[i]]] = C_coords_scratch[i];
 		quotient_3420[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -59849,7 +59849,7 @@ int transpose_coo_42031_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_3420[bucket_3420[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_3420[perm[i]]] = C_coords_scratch[i];
 		quotient_3420[perm[i]] ++;
 	}
 	// Free the scratch space.
@@ -62612,7 +62612,7 @@ int transpose_coo_43021_k4(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_2430[bucket_2430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_2430[perm[i]]] = C_coords_scratch[i];
 		quotient_2430[perm[i]] ++;
 	}
 	// Use qsort to sort the subtrees
@@ -62757,7 +62757,7 @@ int transpose_coo_43021_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_2430[bucket_2430[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_2430[perm[i]]] = C_coords_scratch[i];
 		quotient_2430[perm[i]] ++;
 	}
 	// Free the scratch space.
