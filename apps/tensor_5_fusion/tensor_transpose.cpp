@@ -64780,6 +64780,15 @@ int transpose_coo_43210_k5(struct coo_t *C_coords, int c_size, int order, int *d
 
 int main(int argc, char* argv[]) {
   std::string filename = "./lbnl-network.tns";
+  char *p;
+  int TOTAL;
+  int SPLIT;
+  long conv = strtol(argv[1], &p, 10);
+
+  TOTAL = conv;
+
+  conv = strtol(argv[2], &p, 10);
+  SPLIT = conv;
   // Read tensor data  
   int order = 5;
   int * dimensions = (int*)malloc(sizeof(int)*order);
@@ -64835,6 +64844,7 @@ int main(int argc, char* argv[]) {
 
   stream.close();
 
+		if(0 % TOTAL == SPLIT){
 		cout << "01234, 0, 0" ;
 		// (0, 1, 2, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -64883,6 +64893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(1 % TOTAL == SPLIT){
 		cout << "01243, 0, 0" ;
 		// (0, 1, 2, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -64931,6 +64943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(2 % TOTAL == SPLIT){
 		cout << "01324, 0, 0" ;
 		// (0, 1, 3, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -64979,6 +64993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(3 % TOTAL == SPLIT){
 		cout << "01342, 0, 0" ;
 		// (0, 1, 3, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65027,6 +65043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(4 % TOTAL == SPLIT){
 		cout << "01423, 0, 0" ;
 		// (0, 1, 4, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -65075,6 +65093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(5 % TOTAL == SPLIT){
 		cout << "01432, 0, 0" ;
 		// (0, 1, 4, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65123,6 +65143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(6 % TOTAL == SPLIT){
 		cout << "02134, 0, 0" ;
 		// (0, 2, 1, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -65171,6 +65193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(7 % TOTAL == SPLIT){
 		cout << "02143, 0, 0" ;
 		// (0, 2, 1, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -65219,6 +65243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(8 % TOTAL == SPLIT){
 		cout << "02314, 0, 0" ;
 		// (0, 2, 3, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -65267,6 +65293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(9 % TOTAL == SPLIT){
 		cout << "02341, 0, 0" ;
 		// (0, 2, 3, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65315,6 +65343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(10 % TOTAL == SPLIT){
 		cout << "02413, 0, 0" ;
 		// (0, 2, 4, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -65363,6 +65393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(11 % TOTAL == SPLIT){
 		cout << "02431, 0, 0" ;
 		// (0, 2, 4, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65411,6 +65443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(12 % TOTAL == SPLIT){
 		cout << "03124, 0, 0" ;
 		// (0, 3, 1, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -65459,6 +65493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(13 % TOTAL == SPLIT){
 		cout << "03142, 0, 0" ;
 		// (0, 3, 1, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65507,6 +65543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(14 % TOTAL == SPLIT){
 		cout << "03214, 0, 0" ;
 		// (0, 3, 2, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -65555,6 +65593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(15 % TOTAL == SPLIT){
 		cout << "03241, 0, 0" ;
 		// (0, 3, 2, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65603,6 +65643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(16 % TOTAL == SPLIT){
 		cout << "03412, 0, 0" ;
 		// (0, 3, 4, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65651,6 +65693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(17 % TOTAL == SPLIT){
 		cout << "03421, 0, 0" ;
 		// (0, 3, 4, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65699,6 +65743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(18 % TOTAL == SPLIT){
 		cout << "04123, 0, 0" ;
 		// (0, 4, 1, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -65747,6 +65793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(19 % TOTAL == SPLIT){
 		cout << "04132, 0, 0" ;
 		// (0, 4, 1, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65795,6 +65843,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(20 % TOTAL == SPLIT){
 		cout << "04213, 0, 0" ;
 		// (0, 4, 2, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -65843,6 +65893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(21 % TOTAL == SPLIT){
 		cout << "04231, 0, 0" ;
 		// (0, 4, 2, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65891,6 +65943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(22 % TOTAL == SPLIT){
 		cout << "04312, 0, 0" ;
 		// (0, 4, 3, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -65939,6 +65993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(23 % TOTAL == SPLIT){
 		cout << "04321, 0, 0" ;
 		// (0, 4, 3, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -65987,6 +66043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(24 % TOTAL == SPLIT){
 		cout << "10234, 0, 0" ;
 		// (1, 0, 2, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66035,6 +66093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(25 % TOTAL == SPLIT){
 		cout << "10243, 0, 0" ;
 		// (1, 0, 2, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66083,6 +66143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(26 % TOTAL == SPLIT){
 		cout << "10324, 0, 0" ;
 		// (1, 0, 3, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66131,6 +66193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(27 % TOTAL == SPLIT){
 		cout << "10342, 0, 0" ;
 		// (1, 0, 3, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -66179,6 +66243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(28 % TOTAL == SPLIT){
 		cout << "10423, 0, 0" ;
 		// (1, 0, 4, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66227,6 +66293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(29 % TOTAL == SPLIT){
 		cout << "10432, 0, 0" ;
 		// (1, 0, 4, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -66275,6 +66343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(30 % TOTAL == SPLIT){
 		cout << "12034, 0, 0" ;
 		// (1, 2, 0, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66323,6 +66393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(31 % TOTAL == SPLIT){
 		cout << "12043, 0, 0" ;
 		// (1, 2, 0, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66371,6 +66443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(32 % TOTAL == SPLIT){
 		cout << "12304, 0, 0" ;
 		// (1, 2, 3, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66419,6 +66493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(33 % TOTAL == SPLIT){
 		cout << "12340, 0, 0" ;
 		// (1, 2, 3, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -66467,6 +66543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(34 % TOTAL == SPLIT){
 		cout << "12403, 0, 0" ;
 		// (1, 2, 4, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66515,6 +66593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(35 % TOTAL == SPLIT){
 		cout << "12430, 0, 0" ;
 		// (1, 2, 4, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -66563,6 +66643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(36 % TOTAL == SPLIT){
 		cout << "13024, 0, 0" ;
 		// (1, 3, 0, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66611,6 +66693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(37 % TOTAL == SPLIT){
 		cout << "13042, 0, 0" ;
 		// (1, 3, 0, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -66659,6 +66743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(38 % TOTAL == SPLIT){
 		cout << "13204, 0, 0" ;
 		// (1, 3, 2, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -66707,6 +66793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(39 % TOTAL == SPLIT){
 		cout << "13240, 0, 0" ;
 		// (1, 3, 2, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -66755,6 +66843,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(40 % TOTAL == SPLIT){
 		cout << "13402, 0, 0" ;
 		// (1, 3, 4, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -66803,6 +66893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(41 % TOTAL == SPLIT){
 		cout << "13420, 0, 0" ;
 		// (1, 3, 4, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -66851,6 +66943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(42 % TOTAL == SPLIT){
 		cout << "14023, 0, 0" ;
 		// (1, 4, 0, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66899,6 +66993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(43 % TOTAL == SPLIT){
 		cout << "14032, 0, 0" ;
 		// (1, 4, 0, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -66947,6 +67043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(44 % TOTAL == SPLIT){
 		cout << "14203, 0, 0" ;
 		// (1, 4, 2, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -66995,6 +67093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(45 % TOTAL == SPLIT){
 		cout << "14230, 0, 0" ;
 		// (1, 4, 2, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -67043,6 +67143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(46 % TOTAL == SPLIT){
 		cout << "14302, 0, 0" ;
 		// (1, 4, 3, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -67091,6 +67193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(47 % TOTAL == SPLIT){
 		cout << "14320, 0, 0" ;
 		// (1, 4, 3, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -67139,6 +67243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(48 % TOTAL == SPLIT){
 		cout << "20134, 0, 0" ;
 		// (2, 0, 1, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67187,6 +67293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(49 % TOTAL == SPLIT){
 		cout << "20143, 0, 0" ;
 		// (2, 0, 1, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -67235,6 +67343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(50 % TOTAL == SPLIT){
 		cout << "20314, 0, 0" ;
 		// (2, 0, 3, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67283,6 +67393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(51 % TOTAL == SPLIT){
 		cout << "20341, 0, 0" ;
 		// (2, 0, 3, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -67331,6 +67443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(52 % TOTAL == SPLIT){
 		cout << "20413, 0, 0" ;
 		// (2, 0, 4, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -67379,6 +67493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(53 % TOTAL == SPLIT){
 		cout << "20431, 0, 0" ;
 		// (2, 0, 4, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -67427,6 +67543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(54 % TOTAL == SPLIT){
 		cout << "21034, 0, 0" ;
 		// (2, 1, 0, 3, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67475,6 +67593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(55 % TOTAL == SPLIT){
 		cout << "21043, 0, 0" ;
 		// (2, 1, 0, 4, 3)
 		for(int i = 0; i < 100; i ++){
@@ -67523,6 +67643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(56 % TOTAL == SPLIT){
 		cout << "21304, 0, 0" ;
 		// (2, 1, 3, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67571,6 +67693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(57 % TOTAL == SPLIT){
 		cout << "21340, 0, 0" ;
 		// (2, 1, 3, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -67619,6 +67743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(58 % TOTAL == SPLIT){
 		cout << "21403, 0, 0" ;
 		// (2, 1, 4, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -67667,6 +67793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(59 % TOTAL == SPLIT){
 		cout << "21430, 0, 0" ;
 		// (2, 1, 4, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -67715,6 +67843,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(60 % TOTAL == SPLIT){
 		cout << "23014, 0, 0" ;
 		// (2, 3, 0, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67763,6 +67893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(61 % TOTAL == SPLIT){
 		cout << "23041, 0, 0" ;
 		// (2, 3, 0, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -67811,6 +67943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(62 % TOTAL == SPLIT){
 		cout << "23104, 0, 0" ;
 		// (2, 3, 1, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -67859,6 +67993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(63 % TOTAL == SPLIT){
 		cout << "23140, 0, 0" ;
 		// (2, 3, 1, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -67907,6 +68043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(64 % TOTAL == SPLIT){
 		cout << "23401, 0, 0" ;
 		// (2, 3, 4, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -67955,6 +68093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(65 % TOTAL == SPLIT){
 		cout << "23410, 0, 0" ;
 		// (2, 3, 4, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -68003,6 +68143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(66 % TOTAL == SPLIT){
 		cout << "24013, 0, 0" ;
 		// (2, 4, 0, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -68051,6 +68193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(67 % TOTAL == SPLIT){
 		cout << "24031, 0, 0" ;
 		// (2, 4, 0, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -68099,6 +68243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(68 % TOTAL == SPLIT){
 		cout << "24103, 0, 0" ;
 		// (2, 4, 1, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -68147,6 +68293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(69 % TOTAL == SPLIT){
 		cout << "24130, 0, 0" ;
 		// (2, 4, 1, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -68195,6 +68343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(70 % TOTAL == SPLIT){
 		cout << "24301, 0, 0" ;
 		// (2, 4, 3, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -68243,6 +68393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(71 % TOTAL == SPLIT){
 		cout << "24310, 0, 0" ;
 		// (2, 4, 3, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -68291,6 +68443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(72 % TOTAL == SPLIT){
 		cout << "30124, 0, 0" ;
 		// (3, 0, 1, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -68339,6 +68493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(73 % TOTAL == SPLIT){
 		cout << "30142, 0, 0" ;
 		// (3, 0, 1, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -68387,6 +68543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(74 % TOTAL == SPLIT){
 		cout << "30214, 0, 0" ;
 		// (3, 0, 2, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -68435,6 +68593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(75 % TOTAL == SPLIT){
 		cout << "30241, 0, 0" ;
 		// (3, 0, 2, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -68483,6 +68643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(76 % TOTAL == SPLIT){
 		cout << "30412, 0, 0" ;
 		// (3, 0, 4, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -68531,6 +68693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(77 % TOTAL == SPLIT){
 		cout << "30421, 0, 0" ;
 		// (3, 0, 4, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -68579,6 +68743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(78 % TOTAL == SPLIT){
 		cout << "31024, 0, 0" ;
 		// (3, 1, 0, 2, 4)
 		for(int i = 0; i < 100; i ++){
@@ -68627,6 +68793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(79 % TOTAL == SPLIT){
 		cout << "31042, 0, 0" ;
 		// (3, 1, 0, 4, 2)
 		for(int i = 0; i < 100; i ++){
@@ -68675,6 +68843,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(80 % TOTAL == SPLIT){
 		cout << "31204, 0, 0" ;
 		// (3, 1, 2, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -68723,6 +68893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(81 % TOTAL == SPLIT){
 		cout << "31240, 0, 0" ;
 		// (3, 1, 2, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -68771,6 +68943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(82 % TOTAL == SPLIT){
 		cout << "31402, 0, 0" ;
 		// (3, 1, 4, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -68819,6 +68993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(83 % TOTAL == SPLIT){
 		cout << "31420, 0, 0" ;
 		// (3, 1, 4, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -68867,6 +69043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(84 % TOTAL == SPLIT){
 		cout << "32014, 0, 0" ;
 		// (3, 2, 0, 1, 4)
 		for(int i = 0; i < 100; i ++){
@@ -68915,6 +69093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(85 % TOTAL == SPLIT){
 		cout << "32041, 0, 0" ;
 		// (3, 2, 0, 4, 1)
 		for(int i = 0; i < 100; i ++){
@@ -68963,6 +69143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(86 % TOTAL == SPLIT){
 		cout << "32104, 0, 0" ;
 		// (3, 2, 1, 0, 4)
 		for(int i = 0; i < 100; i ++){
@@ -69011,6 +69193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(87 % TOTAL == SPLIT){
 		cout << "32140, 0, 0" ;
 		// (3, 2, 1, 4, 0)
 		for(int i = 0; i < 100; i ++){
@@ -69059,6 +69243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(88 % TOTAL == SPLIT){
 		cout << "32401, 0, 0" ;
 		// (3, 2, 4, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -69107,6 +69293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(89 % TOTAL == SPLIT){
 		cout << "32410, 0, 0" ;
 		// (3, 2, 4, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -69155,6 +69343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(90 % TOTAL == SPLIT){
 		cout << "34012, 0, 0" ;
 		// (3, 4, 0, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69203,6 +69393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(91 % TOTAL == SPLIT){
 		cout << "34021, 0, 0" ;
 		// (3, 4, 0, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -69251,6 +69443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(92 % TOTAL == SPLIT){
 		cout << "34102, 0, 0" ;
 		// (3, 4, 1, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69299,6 +69493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(93 % TOTAL == SPLIT){
 		cout << "34120, 0, 0" ;
 		// (3, 4, 1, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -69347,6 +69543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(94 % TOTAL == SPLIT){
 		cout << "34201, 0, 0" ;
 		// (3, 4, 2, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -69395,6 +69593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(95 % TOTAL == SPLIT){
 		cout << "34210, 0, 0" ;
 		// (3, 4, 2, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -69443,6 +69643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(96 % TOTAL == SPLIT){
 		cout << "40123, 0, 0" ;
 		// (4, 0, 1, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -69491,6 +69693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(97 % TOTAL == SPLIT){
 		cout << "40132, 0, 0" ;
 		// (4, 0, 1, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69539,6 +69743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(98 % TOTAL == SPLIT){
 		cout << "40213, 0, 0" ;
 		// (4, 0, 2, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -69587,6 +69793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(99 % TOTAL == SPLIT){
 		cout << "40231, 0, 0" ;
 		// (4, 0, 2, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -69635,6 +69843,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(100 % TOTAL == SPLIT){
 		cout << "40312, 0, 0" ;
 		// (4, 0, 3, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69683,6 +69893,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(101 % TOTAL == SPLIT){
 		cout << "40321, 0, 0" ;
 		// (4, 0, 3, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -69731,6 +69943,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(102 % TOTAL == SPLIT){
 		cout << "41023, 0, 0" ;
 		// (4, 1, 0, 2, 3)
 		for(int i = 0; i < 100; i ++){
@@ -69779,6 +69993,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(103 % TOTAL == SPLIT){
 		cout << "41032, 0, 0" ;
 		// (4, 1, 0, 3, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69827,6 +70043,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(104 % TOTAL == SPLIT){
 		cout << "41203, 0, 0" ;
 		// (4, 1, 2, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -69875,6 +70093,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(105 % TOTAL == SPLIT){
 		cout << "41230, 0, 0" ;
 		// (4, 1, 2, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -69923,6 +70143,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(106 % TOTAL == SPLIT){
 		cout << "41302, 0, 0" ;
 		// (4, 1, 3, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -69971,6 +70193,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(107 % TOTAL == SPLIT){
 		cout << "41320, 0, 0" ;
 		// (4, 1, 3, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -70019,6 +70243,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(108 % TOTAL == SPLIT){
 		cout << "42013, 0, 0" ;
 		// (4, 2, 0, 1, 3)
 		for(int i = 0; i < 100; i ++){
@@ -70067,6 +70293,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(109 % TOTAL == SPLIT){
 		cout << "42031, 0, 0" ;
 		// (4, 2, 0, 3, 1)
 		for(int i = 0; i < 100; i ++){
@@ -70115,6 +70343,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(110 % TOTAL == SPLIT){
 		cout << "42103, 0, 0" ;
 		// (4, 2, 1, 0, 3)
 		for(int i = 0; i < 100; i ++){
@@ -70163,6 +70393,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(111 % TOTAL == SPLIT){
 		cout << "42130, 0, 0" ;
 		// (4, 2, 1, 3, 0)
 		for(int i = 0; i < 100; i ++){
@@ -70211,6 +70443,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(112 % TOTAL == SPLIT){
 		cout << "42301, 0, 0" ;
 		// (4, 2, 3, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -70259,6 +70493,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(113 % TOTAL == SPLIT){
 		cout << "42310, 0, 0" ;
 		// (4, 2, 3, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -70307,6 +70543,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(114 % TOTAL == SPLIT){
 		cout << "43012, 0, 0" ;
 		// (4, 3, 0, 1, 2)
 		for(int i = 0; i < 100; i ++){
@@ -70355,6 +70593,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(115 % TOTAL == SPLIT){
 		cout << "43021, 0, 0" ;
 		// (4, 3, 0, 2, 1)
 		for(int i = 0; i < 100; i ++){
@@ -70403,6 +70643,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(116 % TOTAL == SPLIT){
 		cout << "43102, 0, 0" ;
 		// (4, 3, 1, 0, 2)
 		for(int i = 0; i < 100; i ++){
@@ -70451,6 +70693,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(117 % TOTAL == SPLIT){
 		cout << "43120, 0, 0" ;
 		// (4, 3, 1, 2, 0)
 		for(int i = 0; i < 100; i ++){
@@ -70499,6 +70743,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(118 % TOTAL == SPLIT){
 		cout << "43201, 0, 0" ;
 		// (4, 3, 2, 0, 1)
 		for(int i = 0; i < 100; i ++){
@@ -70547,6 +70793,8 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
+		if(119 % TOTAL == SPLIT){
 		cout << "43210, 0, 0" ;
 		// (4, 3, 2, 1, 0)
 		for(int i = 0; i < 100; i ++){
@@ -70595,4 +70843,5 @@ int main(int argc, char* argv[]) {
 		}
 		cout << endl;
 
+		}
 }
