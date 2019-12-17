@@ -25,7 +25,7 @@ struct coo_t
 	int32_t	idx0;
 	int32_t	idx1;
 	int32_t	idx2;
-	int32_t	val;
+	double	val;
 };
 
 
@@ -287,14 +287,22 @@ int cmp_10(const void *p, const void *q)
 }
 // transpose permutes the modes of the coordinates to be (0, 1, 2)
 int transpose_coo_012_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 1, 2)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_012);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 1, 2)
 int transpose_coo_012_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 1, 2)
 	// Use qsort to sort the subtrees
@@ -305,15 +313,21 @@ int transpose_coo_012_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx0 != C_coords[i - 1].idx0) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_12);
 			qsort_start = i;
 		}
 	}
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 1, 2)
 int transpose_coo_012_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 1, 2)
 	// Use qsort to sort the subtrees
@@ -327,29 +341,47 @@ int transpose_coo_012_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx1 != C_coords[i - 1].idx1) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_2);
 			qsort_start = i;
 		}
 	}
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 1, 2)
 int transpose_coo_012_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 1, 2)
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 2, 1)
 int transpose_coo_021_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 2, 1)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_021);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 2, 1)
 int transpose_coo_021_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (0, 2, 1)
 	// Use qsort to sort the subtrees
@@ -360,15 +392,21 @@ int transpose_coo_021_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx0 != C_coords[i - 1].idx0) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_21);
 			qsort_start = i;
 		}
 	}
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 2, 1)
 int transpose_coo_021_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -411,12 +449,14 @@ int transpose_coo_021_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		perm[idx] = bucket_20[i];
 		B2_count[idx2]--;
 	}
+	free(bucket_20);
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
+	free(quotient_20);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -428,7 +468,7 @@ int transpose_coo_021_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx2 != C_coords[i - 1].idx2) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_1);
 			qsort_start = i;
 		}
@@ -436,13 +476,16 @@ int transpose_coo_021_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
-	free(bucket_20);
-	free(quotient_20);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [0])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (0, 2, 1)
 int transpose_coo_021_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -485,30 +528,41 @@ int transpose_coo_021_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 		perm[idx] = bucket_20[i];
 		B2_count[idx2]--;
 	}
+	free(bucket_20);
 
 	// Move the items back to the buckets.
 	for (int i = 0; i < c_size; i ++) {
-		C_coords[quotient_20[bucket_20[perm[i]]]] = C_coords_scratch[perm[i]];
+		C_coords[quotient_20[perm[i]]] = C_coords_scratch[i];
 		quotient_20[perm[i]] ++;
 	}
+	free(quotient_20);
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
-	free(bucket_20);
-	free(quotient_20);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [0])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 0, 2)
 int transpose_coo_102_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (1, 0, 2)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_102);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 0, 2)
 int transpose_coo_102_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -524,7 +578,7 @@ int transpose_coo_102_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -538,6 +592,8 @@ int transpose_coo_102_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -546,7 +602,7 @@ int transpose_coo_102_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx1 != C_coords[i - 1].idx1) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_02);
 			qsort_start = i;
 		}
@@ -554,11 +610,16 @@ int transpose_coo_102_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 0, 2)
 int transpose_coo_102_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -574,7 +635,7 @@ int transpose_coo_102_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -588,6 +649,8 @@ int transpose_coo_102_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -599,7 +662,7 @@ int transpose_coo_102_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx0 != C_coords[i - 1].idx0) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_2);
 			qsort_start = i;
 		}
@@ -607,11 +670,16 @@ int transpose_coo_102_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 0, 2)
 int transpose_coo_102_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -627,7 +695,7 @@ int transpose_coo_102_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -641,22 +709,35 @@ int transpose_coo_102_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 2, 0)
 int transpose_coo_120_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (1, 2, 0)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_120);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 2, 0)
 int transpose_coo_120_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -672,7 +753,7 @@ int transpose_coo_120_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -686,6 +767,8 @@ int transpose_coo_120_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -694,7 +777,7 @@ int transpose_coo_120_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx1 != C_coords[i - 1].idx1) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_20);
 			qsort_start = i;
 		}
@@ -702,11 +785,16 @@ int transpose_coo_120_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 2, 0)
 int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -722,7 +810,7 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -737,6 +825,8 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
 
+	free(B2_count);
+
 	// Histogram sort on mode 1
 	int B1_size = dimensions[1];
 	int32_t *B1_count = (int32_t *)calloc(B1_size, sizeof(int32_t));
@@ -747,7 +837,7 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -761,6 +851,8 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -772,7 +864,7 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx2 != C_coords[i - 1].idx2) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_0);
 			qsort_start = i;
 		}
@@ -780,12 +872,16 @@ int transpose_coo_120_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, []), (1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (1, 2, 0)
 int transpose_coo_120_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -801,7 +897,7 @@ int transpose_coo_120_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -816,6 +912,8 @@ int transpose_coo_120_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
 
+	free(B2_count);
+
 	// Histogram sort on mode 1
 	int B1_size = dimensions[1];
 	int32_t *B1_count = (int32_t *)calloc(B1_size, sizeof(int32_t));
@@ -826,7 +924,7 @@ int transpose_coo_120_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -840,23 +938,35 @@ int transpose_coo_120_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B1_count);
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
-	free(B1_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, []), (1, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 0, 1)
 int transpose_coo_201_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (2, 0, 1)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_201);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 0, 1)
 int transpose_coo_201_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -872,7 +982,7 @@ int transpose_coo_201_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -886,6 +996,8 @@ int transpose_coo_201_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -894,7 +1006,7 @@ int transpose_coo_201_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx2 != C_coords[i - 1].idx2) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_01);
 			qsort_start = i;
 		}
@@ -902,11 +1014,16 @@ int transpose_coo_201_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 0, 1)
 int transpose_coo_201_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -922,7 +1039,7 @@ int transpose_coo_201_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -936,6 +1053,8 @@ int transpose_coo_201_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -947,7 +1066,7 @@ int transpose_coo_201_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx0 != C_coords[i - 1].idx0) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_1);
 			qsort_start = i;
 		}
@@ -955,11 +1074,16 @@ int transpose_coo_201_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 0, 1)
 int transpose_coo_201_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -975,7 +1099,7 @@ int transpose_coo_201_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -989,22 +1113,35 @@ int transpose_coo_201_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 1, 0)
 int transpose_coo_210_k0(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 
 	// Sort the coordinates to be in (2, 1, 0)
 	// Use qsort to sort the subtrees
 	qsort(C_coords, c_size, sizeof(struct coo_t), cmp_210);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 1, 0)
 int transpose_coo_210_k1(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -1020,7 +1157,7 @@ int transpose_coo_210_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -1034,6 +1171,8 @@ int transpose_coo_210_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -1042,7 +1181,7 @@ int transpose_coo_210_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 		if(C_coords[i].idx2 != C_coords[i - 1].idx2) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_10);
 			qsort_start = i;
 		}
@@ -1050,11 +1189,16 @@ int transpose_coo_210_k1(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 1, 0)
 int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -1070,7 +1214,7 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -1085,6 +1229,8 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
 
+	free(B1_count);
+
 	// Histogram sort on mode 2
 	int B2_size = dimensions[2];
 	int32_t *B2_count = (int32_t *)calloc(B2_size, sizeof(int32_t));
@@ -1095,7 +1241,7 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -1109,6 +1255,8 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Use qsort to sort the subtrees
 	int qsort_start = 0;
 	for(int i = 1; i < c_size; i ++)
@@ -1120,7 +1268,7 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 		else if(C_coords[i].idx1 != C_coords[i - 1].idx1) {
 			qsort_same = 0;
 		}
-		if (!qsort_same) {
+		if (!qsort_same || i == c_size - 1) { // Sort if at the end of a segment
 			qsort(&C_coords[qsort_start], (i - qsort_start), sizeof(struct coo_t), cmp_0);
 			qsort_start = i;
 		}
@@ -1128,12 +1276,16 @@ int transpose_coo_210_k2(struct coo_t *C_coords, int c_size, int order, int *dim
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, []), (2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 // transpose permutes the modes of the coordinates to be (2, 1, 0)
 int transpose_coo_210_k3(struct coo_t *C_coords, int c_size, int order, int *dimensions) {
+	taco::util::Timer timer;
+	timer.start();
 	struct coo_t* C_coords_scratch = (struct coo_t *)malloc(sizeof(struct coo_t) * c_size);
 	int* perm = (int *)malloc(sizeof(int) * c_size);
 
@@ -1149,7 +1301,7 @@ int transpose_coo_210_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B1_count
-	for(int idx1 = 1; idx1 <= B1_size; idx1 ++)
+	for(int idx1 = 1; idx1 < B1_size; idx1 ++)
 	{
 		B1_count[idx1] += B1_count[idx1 - 1];
 	}
@@ -1164,6 +1316,8 @@ int transpose_coo_210_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
 
+	free(B1_count);
+
 	// Histogram sort on mode 2
 	int B2_size = dimensions[2];
 	int32_t *B2_count = (int32_t *)calloc(B2_size, sizeof(int32_t));
@@ -1174,7 +1328,7 @@ int transpose_coo_210_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 	}
 
 	// Prefix sum over B2_count
-	for(int idx2 = 1; idx2 <= B2_size; idx2 ++)
+	for(int idx2 = 1; idx2 < B2_size; idx2 ++)
 	{
 		B2_count[idx2] += B2_count[idx2 - 1];
 	}
@@ -1188,16 +1342,30 @@ int transpose_coo_210_k3(struct coo_t *C_coords, int c_size, int order, int *dim
 
 	memcpy(C_coords, C_coords_scratch, c_size*sizeof(struct coo_t));
 
+
+	free(B2_count);
 	// Free the scratch space.
 	free(C_coords_scratch);
 	free(perm);
-	free(B1_count);
-	free(B2_count);
+	timer.stop();
+	taco::util::TimeResults res = timer.getResult();
+	cout << " ,  [(1, []), (2, [])] ";
+	cout << " , "<< res ;
 	return 0;
 }
 
 int main(int argc, char* argv[]) {
-  std::string filename = "/Users/suzymueller/quesadilla/benchmarks/nell-2.tns";
+  char *p;
+  int TOTAL;
+  int SPLIT;
+  long conv = strtol(argv[1], &p, 10);
+
+  TOTAL = conv;
+
+  conv = strtol(argv[2], &p, 10);
+  SPLIT = conv;
+   std::string filename = argv[3];
+
   // Read tensor data  
   int order = 3;
   int * dimensions = (int*)malloc(sizeof(int)*order);
@@ -1247,340 +1415,246 @@ int main(int argc, char* argv[]) {
 
   stream.close();
 
-		cout << "012, 0, 0 , " ;
+		if(0 % TOTAL == SPLIT){
+		cout << "012, 0, 0" ;
 		// (0, 1, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t0;
-			t0.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_012_k0(A, size, order, dimensions);
-			t0.stop();
-			taco::util::TimeResults r0 = t0.getResult();
-			cout << r0 << " , ";
-			t0.clear_cache();
 		}
 		cout << endl;
 
-		cout << "012, 1, 0 , " ;
+		}
+		if(1 % TOTAL == SPLIT){
+		cout << "012, 1, 0" ;
 		// (0, 1, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t1;
-			t1.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_012_k1(A, size, order, dimensions);
-			t1.stop();
-			taco::util::TimeResults r1 = t1.getResult();
-			cout << r1 << " , ";
-			t1.clear_cache();
 		}
 		cout << endl;
 
-		cout << "012, 2, 0 , " ;
+		}
+		if(2 % TOTAL == SPLIT){
+		cout << "012, 2, 0" ;
 		// (0, 1, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t2;
-			t2.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_012_k2(A, size, order, dimensions);
-			t2.stop();
-			taco::util::TimeResults r2 = t2.getResult();
-			cout << r2 << " , ";
-			t2.clear_cache();
 		}
 		cout << endl;
 
-		cout << "012, 3, 0 , " ;
+		}
+		if(3 % TOTAL == SPLIT){
+		cout << "012, 3, 0" ;
 		// (0, 1, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t3;
-			t3.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_012_k3(A, size, order, dimensions);
-			t3.stop();
-			taco::util::TimeResults r3 = t3.getResult();
-			cout << r3 << " , ";
-			t3.clear_cache();
 		}
 		cout << endl;
 
-		cout << "021, 0, 0 , " ;
+		}
+		if(4 % TOTAL == SPLIT){
+		cout << "021, 0, 0" ;
 		// (0, 2, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t4;
-			t4.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_021_k0(A, size, order, dimensions);
-			t4.stop();
-			taco::util::TimeResults r4 = t4.getResult();
-			cout << r4 << " , ";
-			t4.clear_cache();
 		}
 		cout << endl;
 
-		cout << "021, 1, 0 , " ;
+		}
+		if(5 % TOTAL == SPLIT){
+		cout << "021, 1, 0" ;
 		// (0, 2, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t5;
-			t5.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_021_k1(A, size, order, dimensions);
-			t5.stop();
-			taco::util::TimeResults r5 = t5.getResult();
-			cout << r5 << " , ";
-			t5.clear_cache();
 		}
 		cout << endl;
 
-		cout << "021, 2, 1 , " ;
+		}
+		if(6 % TOTAL == SPLIT){
+		cout << "021, 2, 1" ;
 		// (0, 2, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t6;
-			t6.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_021_k2(A, size, order, dimensions);
-			t6.stop();
-			taco::util::TimeResults r6 = t6.getResult();
-			cout << r6 << " , ";
-			t6.clear_cache();
 		}
 		cout << endl;
 
-		cout << "021, 3, 1 , " ;
+		}
+		if(7 % TOTAL == SPLIT){
+		cout << "021, 3, 1" ;
 		// (0, 2, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t7;
-			t7.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_021_k3(A, size, order, dimensions);
-			t7.stop();
-			taco::util::TimeResults r7 = t7.getResult();
-			cout << r7 << " , ";
-			t7.clear_cache();
 		}
 		cout << endl;
 
-		cout << "102, 0, 0 , " ;
+		}
+		if(8 % TOTAL == SPLIT){
+		cout << "102, 0, 0" ;
 		// (1, 0, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t8;
-			t8.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_102_k0(A, size, order, dimensions);
-			t8.stop();
-			taco::util::TimeResults r8 = t8.getResult();
-			cout << r8 << " , ";
-			t8.clear_cache();
 		}
 		cout << endl;
 
-		cout << "102, 1, 1 , " ;
+		}
+		if(9 % TOTAL == SPLIT){
+		cout << "102, 1, 1" ;
 		// (1, 0, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t9;
-			t9.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_102_k1(A, size, order, dimensions);
-			t9.stop();
-			taco::util::TimeResults r9 = t9.getResult();
-			cout << r9 << " , ";
-			t9.clear_cache();
 		}
 		cout << endl;
 
-		cout << "102, 2, 1 , " ;
+		}
+		if(10 % TOTAL == SPLIT){
+		cout << "102, 2, 1" ;
 		// (1, 0, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t10;
-			t10.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_102_k2(A, size, order, dimensions);
-			t10.stop();
-			taco::util::TimeResults r10 = t10.getResult();
-			cout << r10 << " , ";
-			t10.clear_cache();
 		}
 		cout << endl;
 
-		cout << "102, 3, 1 , " ;
+		}
+		if(11 % TOTAL == SPLIT){
+		cout << "102, 3, 1" ;
 		// (1, 0, 2)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t11;
-			t11.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_102_k3(A, size, order, dimensions);
-			t11.stop();
-			taco::util::TimeResults r11 = t11.getResult();
-			cout << r11 << " , ";
-			t11.clear_cache();
 		}
 		cout << endl;
 
-		cout << "120, 0, 0 , " ;
+		}
+		if(12 % TOTAL == SPLIT){
+		cout << "120, 0, 0" ;
 		// (1, 2, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t12;
-			t12.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_120_k0(A, size, order, dimensions);
-			t12.stop();
-			taco::util::TimeResults r12 = t12.getResult();
-			cout << r12 << " , ";
-			t12.clear_cache();
 		}
 		cout << endl;
 
-		cout << "120, 1, 1 , " ;
+		}
+		if(13 % TOTAL == SPLIT){
+		cout << "120, 1, 1" ;
 		// (1, 2, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t13;
-			t13.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_120_k1(A, size, order, dimensions);
-			t13.stop();
-			taco::util::TimeResults r13 = t13.getResult();
-			cout << r13 << " , ";
-			t13.clear_cache();
 		}
 		cout << endl;
 
-		cout << "120, 2, 2 , " ;
+		}
+		if(14 % TOTAL == SPLIT){
+		cout << "120, 2, 2" ;
 		// (1, 2, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t14;
-			t14.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_120_k2(A, size, order, dimensions);
-			t14.stop();
-			taco::util::TimeResults r14 = t14.getResult();
-			cout << r14 << " , ";
-			t14.clear_cache();
 		}
 		cout << endl;
 
-		cout << "120, 3, 2 , " ;
+		}
+		if(15 % TOTAL == SPLIT){
+		cout << "120, 3, 2" ;
 		// (1, 2, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t15;
-			t15.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_120_k3(A, size, order, dimensions);
-			t15.stop();
-			taco::util::TimeResults r15 = t15.getResult();
-			cout << r15 << " , ";
-			t15.clear_cache();
 		}
 		cout << endl;
 
-		cout << "201, 0, 0 , " ;
+		}
+		if(16 % TOTAL == SPLIT){
+		cout << "201, 0, 0" ;
 		// (2, 0, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t16;
-			t16.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_201_k0(A, size, order, dimensions);
-			t16.stop();
-			taco::util::TimeResults r16 = t16.getResult();
-			cout << r16 << " , ";
-			t16.clear_cache();
 		}
 		cout << endl;
 
-		cout << "201, 1, 1 , " ;
+		}
+		if(17 % TOTAL == SPLIT){
+		cout << "201, 1, 1" ;
 		// (2, 0, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t17;
-			t17.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_201_k1(A, size, order, dimensions);
-			t17.stop();
-			taco::util::TimeResults r17 = t17.getResult();
-			cout << r17 << " , ";
-			t17.clear_cache();
 		}
 		cout << endl;
 
-		cout << "201, 2, 1 , " ;
+		}
+		if(18 % TOTAL == SPLIT){
+		cout << "201, 2, 1" ;
 		// (2, 0, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t18;
-			t18.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_201_k2(A, size, order, dimensions);
-			t18.stop();
-			taco::util::TimeResults r18 = t18.getResult();
-			cout << r18 << " , ";
-			t18.clear_cache();
 		}
 		cout << endl;
 
-		cout << "201, 3, 1 , " ;
+		}
+		if(19 % TOTAL == SPLIT){
+		cout << "201, 3, 1" ;
 		// (2, 0, 1)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t19;
-			t19.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_201_k3(A, size, order, dimensions);
-			t19.stop();
-			taco::util::TimeResults r19 = t19.getResult();
-			cout << r19 << " , ";
-			t19.clear_cache();
 		}
 		cout << endl;
 
-		cout << "210, 0, 0 , " ;
+		}
+		if(20 % TOTAL == SPLIT){
+		cout << "210, 0, 0" ;
 		// (2, 1, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t20;
-			t20.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_210_k0(A, size, order, dimensions);
-			t20.stop();
-			taco::util::TimeResults r20 = t20.getResult();
-			cout << r20 << " , ";
-			t20.clear_cache();
 		}
 		cout << endl;
 
-		cout << "210, 1, 1 , " ;
+		}
+		if(21 % TOTAL == SPLIT){
+		cout << "210, 1, 1" ;
 		// (2, 1, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t21;
-			t21.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_210_k1(A, size, order, dimensions);
-			t21.stop();
-			taco::util::TimeResults r21 = t21.getResult();
-			cout << r21 << " , ";
-			t21.clear_cache();
 		}
 		cout << endl;
 
-		cout << "210, 2, 2 , " ;
+		}
+		if(22 % TOTAL == SPLIT){
+		cout << "210, 2, 2" ;
 		// (2, 1, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t22;
-			t22.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_210_k2(A, size, order, dimensions);
-			t22.stop();
-			taco::util::TimeResults r22 = t22.getResult();
-			cout << r22 << " , ";
-			t22.clear_cache();
 		}
 		cout << endl;
 
-		cout << "210, 3, 2 , " ;
+		}
+		if(23 % TOTAL == SPLIT){
+		cout << "210, 3, 2" ;
 		// (2, 1, 0)
 		for(int i = 0; i < 100; i ++){
-		qsort(A, size, sizeof(struct coo_t), cmp_012);
-			taco::util::Timer t23;
-			t23.start();
+			qsort(A, size, sizeof(struct coo_t), cmp_012);
 			transpose_coo_210_k3(A, size, order, dimensions);
-			t23.stop();
-			taco::util::TimeResults r23 = t23.getResult();
-			cout << r23 << " , ";
-			t23.clear_cache();
 		}
 		cout << endl;
 
+		}
+	free(A);
+	free(dimensions);
 }
